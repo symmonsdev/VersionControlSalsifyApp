@@ -1,0 +1,108 @@
+﻿@model SalsifyApp.Models.Product
+@{
+    ViewData["Title"] = "Update Salsify Product";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    @*<title>Index</title>*@
+    <style type="text/css">
+        body {
+            /*font-family: Arial;*/
+            /*font-size: 12pt;*/
+        }
+
+        .ui-autocomplete {
+            overflow: auto;
+            max-height: 100px;
+        }
+
+        .mybutton {
+            padding: 5px 25px;
+            background-color: lightgray;
+            color: black;
+            text-transform: uppercase;
+            /*text-decoration: none;*/
+            /*font-family: helvetica,arial,sans-serif;*/
+            border-radius: 10px;
+            font-size: 12px;
+            border-width: 1px;
+            font-weight: 600
+        }
+
+            .mybutton:hover {
+                background-color: #66b562;
+            }
+    </style>
+
+</head>
+<body>
+
+    @section Scripts
+    {
+        <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.10.0.min.js" type="text/javascript"></script>
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery.ui/1.9.2/jquery-ui.min.js" type="text/javascript"></script>
+        <link href="https://ajax.aspnetcdn.com/ajax/jquery.ui/1.9.2/themes/blitzer/jquery-ui.css"
+              rel="Stylesheet" type="text/css" />
+        <script type="text/javascript">
+            $(function () {
+                $("#txtSKU").autocomplete({
+                    source: function (request, response) {
+                        $.ajax({
+                            url: '/Salsify/AutoComplete/',
+                            //data: "{ 'SKU_Nbr': '" + request.term + "'}",
+                            data: { SKU_Nbr: request.term },
+                            dataType: "json",
+                            type: "POST",
+                            //contentType: "application/json; charset=utf-8",
+                            success: function (data) {
+                                response($.map(data, function (item) {
+                                    return item;
+                                }))
+                            },
+
+                            //success: function (data) {
+                            //    response($.map(data, function (item) {
+                            //        return {
+                            //            label: item,
+                            //            //val: item.split('|')[1] //the right hand side of split will be returned when using [1], [0] will return left side, [2] returns val after 2nd delimited split
+                            //        }
+                            //    }))
+
+
+                            error: function (response) {
+                                alert(response.responseText);
+                            },
+                            failure: function (response) {
+                                alert(response.responseText);
+                            }
+                        });
+                    },
+                    select: function (e, i) {
+                        $("#hfSKU").val(i.item.val);
+                    },
+                    minLength: 1
+                }).focus(function () {
+                    $(this).autocomplete("search");
+                });
+            });
+        </script>
+    }
+    @using (Html.BeginForm("Update", "Salsify", FormMethod.Post))
+    {
+        <div class="text-center">
+            <label>Enter Partial/Whole SKU:&nbsp;</label>
+            <input type="text" id="txtSKU" name="SKUName" style="width:300px" />
+            <input type="hidden" id="hfSKU" name="SKUId" />
+            <br /><br />
+            <input type="submit" id="btnSubmit" value="Update Salsify Product" class="mybutton" />
+            <br /><br />
+            <div id="message">@ViewData["Message"]</div>
+            @*@ViewBag.Message*@
+        </div>
+    }
+</body>
+</html>
