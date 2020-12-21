@@ -667,7 +667,8 @@ namespace SalsifyApp.Controllers
             Json = Json.Replace("}],\"price\":[{", ",");
             Json = Json.Replace("],\"price\":null}", "");// if no pricing record
             Json = Json.Replace("],\"assets\":null,\"price\":null}", "");// if no digital & pricing record
-           
+            Json = Json.Replace("}],\"assets\":null,\"price\":[{", ",");// if no digital & pricing record exist
+
             return Json;
         }
         public void CleanupPropertyValues(List<Product.ProductMaster> pmd) //remove special characters

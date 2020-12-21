@@ -314,7 +314,7 @@ namespace SalsifyApp.Models
             public String THD_MFG_Part_Nbr { get; set; }
             [JsonProperty("The Buy American Act")]
             public string The_Buy_American_Act { get; set; }
-            [JsonProperty("Tier")]
+            [JsonProperty("New Tier")]
             public String Tier { get; set; }
             [JsonProperty("Tiers Per Pallet")]
             public int? Tiers_Per_Pallet { get; set; }
