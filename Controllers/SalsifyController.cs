@@ -104,6 +104,7 @@ namespace SalsifyApp.Controllers
             pmd[0].THD_Category = GetSalsifyValue("THD_Category", pmd[0].THD_Category);
             pmd[0].Type_of_Connection = GetSalsifyValue("Type_of_Connection", pmd[0].Type_of_Connection);
             pmd[0].Valve_System_Type = GetSalsifyValue("Valve_System_Type", pmd[0].Valve_System_Type);
+            pmd[0].Product_Category = GetSalsifyValue("Product_Category", pmd[0].Product_Category);
 
             //Add Pricing US
             // spot for US indicator
@@ -260,6 +261,7 @@ namespace SalsifyApp.Controllers
                     pmd[0].THD_Category = GetSalsifyValue("THD_Category", pmd[0].THD_Category);
                     pmd[0].Type_of_Connection = GetSalsifyValue("Type_of_Connection", pmd[0].Type_of_Connection);
                     pmd[0].Valve_System_Type = GetSalsifyValue("Valve_System_Type", pmd[0].Valve_System_Type);
+                    pmd[0].Product_Category = GetSalsifyValue("Product_Category", pmd[0].Product_Category);
 
                     //Add Pricing US
                     // spot for US indicator
@@ -419,6 +421,7 @@ namespace SalsifyApp.Controllers
             pmd[0].THD_Category = GetSalsifyValue("THD_Category", pmd[0].THD_Category);
             pmd[0].Type_of_Connection = GetSalsifyValue("Type_of_Connection", pmd[0].Type_of_Connection);
             pmd[0].Valve_System_Type = GetSalsifyValue("Valve_System_Type", pmd[0].Valve_System_Type);
+            pmd[0].Product_Category = GetSalsifyValue("Product_Category", pmd[0].Product_Category);
 
             //Add Pricing US
             //pmd[0].ListPrice = pricing[0].ListPrice.ToString("0.00");
@@ -540,6 +543,7 @@ namespace SalsifyApp.Controllers
                     pmd[0].THD_Category = GetSalsifyValue("THD_Category", pmd[0].THD_Category);
                     pmd[0].Type_of_Connection = GetSalsifyValue("Type_of_Connection", pmd[0].Type_of_Connection);
                     pmd[0].Valve_System_Type = GetSalsifyValue("Valve_System_Type", pmd[0].Valve_System_Type);
+                    pmd[0].Product_Category = GetSalsifyValue("Product_Category", pmd[0].Product_Category);
 
                     //Add Pricing US
                     //pmd[0].ListPrice = pricing[0].ListPrice.ToString("0.00");
@@ -709,6 +713,10 @@ namespace SalsifyApp.Controllers
                     if (currentValue == "")
                     {
                             property.SetValue(pmd[0], null);
+                    }
+                    else if (currentValue == " ")
+                    {
+                        property.SetValue(pmd[0], null);
                     }
                 }
                 if (property.PropertyType == typeof(Decimal?))

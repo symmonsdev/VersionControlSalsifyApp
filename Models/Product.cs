@@ -358,6 +358,14 @@ namespace SalsifyApp.Models
             //public string MainImage { get; set; }
             //public DateTime Date_Added { get; set; }
             //public DateTime Date_Updated { get; set; }
+            [JsonProperty("Ready for Website")]
+            public string ReadyWebSite { get; set; }
+            [JsonProperty("Special Attribute: Assist Products")]
+            public string AssistProduct { get; set; }
+            [JsonProperty("Special Attribute: Lead Free")]
+            public string LeadFree { get; set; }
+            [JsonProperty("Product Category")]
+            public string Product_Category { get; set; }
         }
 
         public class SalsifyDigitalAsset
