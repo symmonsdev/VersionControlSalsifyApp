@@ -76,14 +76,6 @@ namespace SalsifyApp.Controllers
             //get digital asset data from portal table and put in SalsifyDigitalAsset class
             List<Product.SalsifyDigitalAsset> digital = models.GetImageInfo(SKUName); //"1111"
 
-            //remove special characters
-            //CleanupPropertyValues(pmd);
-
-            //replace "" with null
-            DefaultBlankstoNull(pmd);
-            DefaultDigitalBlankstoNull(digital);
-            DefaultPricingBlankstoNull(pricing);
-
             //harcode for test
             //pmd[0].Country_of_Origin = "United States";
             //pmd[0].GPC_Code = null;
@@ -107,6 +99,7 @@ namespace SalsifyApp.Controllers
             pmd[0].Product_Category = GetSalsifyValue("Product_Category", pmd[0].Product_Category);
 
             //Add Pricing US
+
             // spot for US indicator
             //pmd[0].ListPrice = pricing[0].ListPrice.ToString("0.00");
             //pmd[0].MAPPrice = pricing[0].MAPPrice.ToString("0.00");
@@ -133,6 +126,14 @@ namespace SalsifyApp.Controllers
             //            break;
             //    }
             //}
+
+            //remove special characters
+            //CleanupPropertyValues(pmd);
+
+            //replace "" with null
+            DefaultBlankstoNull(pmd);
+            DefaultDigitalBlankstoNull(digital);
+            DefaultPricingBlankstoNull(pricing);
 
             using (var client = new HttpClient())
             {
@@ -233,14 +234,6 @@ namespace SalsifyApp.Controllers
                     //get digital asset data from portal table and put in SalsifyDigitalAsset class
                     List<Product.SalsifyDigitalAsset> digital = models.GetImageInfo(SKUName); //"1111"
 
-                    //remove special characters
-                    //CleanupPropertyValues(pmd);
-
-                    //replace "" with null
-                    DefaultBlankstoNull(pmd);
-                    DefaultDigitalBlankstoNull(digital);
-                    DefaultPricingBlankstoNull(pricing);
-
                     //harcode for test
                     //pmd[0].Country_of_Origin = "United States";
                     //pmd[0].GPC_Code = null;
@@ -294,6 +287,15 @@ namespace SalsifyApp.Controllers
 
                     //ViewData["Message"] = SKUName + " was not found in the Portal Product Master";
                     //return View();
+
+                    //remove special characters
+                    //CleanupPropertyValues(pmd);
+
+                    //replace "" with null
+                    DefaultBlankstoNull(pmd);
+                    DefaultDigitalBlankstoNull(digital);
+                    DefaultPricingBlankstoNull(pricing);
+
 
                     using (var client = new HttpClient())
                     {
@@ -395,21 +397,12 @@ namespace SalsifyApp.Controllers
             //get digital asset data from portal table and put in SalsifyDigitalAsset class
             List<Product.SalsifyDigitalAsset> digital = models.GetImageInfo(SKUName); //"1111"
 
-            //remove special characters
-            //CleanupPropertyValues(pmd);
-
-            //replace "" with null
-            DefaultBlankstoNull(pmd);
-            DefaultDigitalBlankstoNull(digital);
-            DefaultPricingBlankstoNull(pricing);
-
-
             //harcode for test
             //pmd[0].Country_of_Origin = "United States";
             //pmd[0].GPC_Code = null;
             //pmd[0].Finish = null;
             //**** REMOVE TEST ONLY
-            pmd[0].Cal_Green_Compliant = "CALGreen";
+            //pmd[0].Cal_Green_Compliant = "CALGreen";
             //*** TEST ONLY REMOVE THIS when digital assets logic in place
             //digital[0].MainImage_ID = "0befd3e19af88801880efae987f4fcc0ee08ab5e"; //must be ID
 
@@ -434,6 +427,14 @@ namespace SalsifyApp.Controllers
             {
                 pmd[0].CAListPrice = pricing[1].ListPrice.ToString("0.00");
             }
+
+            //remove special characters
+            //CleanupPropertyValues(pmd);
+
+            //replace "" with null
+            DefaultBlankstoNull(pmd);
+            DefaultDigitalBlankstoNull(digital);
+            DefaultPricingBlankstoNull(pricing);
 
             using (var client = new HttpClient())
             {
@@ -517,21 +518,12 @@ namespace SalsifyApp.Controllers
                     //get digital asset data from portal table and put in SalsifyDigitalAsset class
                     List<Product.SalsifyDigitalAsset> digital = models.GetImageInfo(SKUName); //"1111"
 
-                    //remove special characters
-                    //CleanupPropertyValues(pmd);
-
-                    //replace "" with null
-                    DefaultBlankstoNull(pmd);
-                    DefaultDigitalBlankstoNull(digital);
-                    DefaultPricingBlankstoNull(pricing);
-
-
                     //harcode for test
                     //pmd[0].Country_of_Origin = "United States";
                     //pmd[0].GPC_Code = null;
                     //pmd[0].Finish = null;
                     //**** REMOVE TEST ONLY
-                    pmd[0].Cal_Green_Compliant = "CALGreen";
+                    //pmd[0].Cal_Green_Compliant = "CALGreen";
                     //*** TEST ONLY REMOVE THIS when digital assets logic in place
                     //digital[0].MainImage_ID = "0befd3e19af88801880efae987f4fcc0ee08ab5e"; //must be ID
 
@@ -551,7 +543,7 @@ namespace SalsifyApp.Controllers
                     //pmd[0].MAPPrice = pricing[0].MAPPrice.ToString("0.00");
                     //pmd[0].WholesalePrice = pricing[0].WholesalePrice.ToString("0.00");
 
-                    //Add Pricing Canada use [1]
+                    //Add Pricing Canada use pricing[1]
                     if (pricing.Count != 0)
                     {
                         pmd[0].CAListPrice = pricing[1].ListPrice.ToString("0.00");
@@ -562,6 +554,15 @@ namespace SalsifyApp.Controllers
                     //    ViewData["Message"] = SKUName + " was not found in the Portal Product Master";
                     //    return View();
                     //}
+
+                    //remove special characters
+                    //CleanupPropertyValues(pmd);
+
+                    //replace "" with null
+                    DefaultBlankstoNull(pmd);
+                    DefaultDigitalBlankstoNull(digital);
+                    DefaultPricingBlankstoNull(pricing);
+
 
                     using (var client = new HttpClient())
                     {
