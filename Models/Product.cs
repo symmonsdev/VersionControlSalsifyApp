@@ -425,16 +425,7 @@ namespace SalsifyApp.Models
             public string Logo_ID { get; set; }
             [JsonProperty("Prop 65 Warning")]
             public string Prop65Warning_ID { get; set; }
-            //public string CNVDiscontinuedUrl_ID { get; set; }
-            //public string CNVDocuments1_ID { get; set; }
-            //public string CNVDocuments2_ID { get; set; }
-            //public string CNVDocuments3_ID { get; set; }
-            //public string CNVImages1_ID { get; set; }
-            //public string CNVImages2_ID { get; set; }
-            //public string CNVImages3_ID { get; set; }
-            //public string CNVImages4_ID { get; set; }
-            //public Decimal DateUpdated { get; set; }
-            //public Decimal TmeOfDay { get; set; }
+ 
         }
 
         public class PMDGroup
