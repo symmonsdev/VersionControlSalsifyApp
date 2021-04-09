@@ -73,8 +73,9 @@ namespace SalsifyApp.Controllers
                 return View();
             }
 
+            //******* REMOVED 3/30/2021 from spec, not needed at this time possible later phases *******
             //get digital asset data from portal table and put in SalsifyDigitalAsset class
-            List<Product.SalsifyDigitalAsset> digital = models.GetImageInfo(SKUName); //"1111"
+            //List<Product.SalsifyDigitalAsset> digital = models.GetImageInfo(SKUName); //"1111"
 
             //harcode for test
             //pmd[0].Country_of_Origin = "United States";
@@ -133,7 +134,8 @@ namespace SalsifyApp.Controllers
 
             //replace "" with null
             DefaultBlankstoNull(pmd);
-            DefaultDigitalBlankstoNull(digital);
+            //******* REMOVED 3/30/2021 from spec, not needed at this time possible later phases *******
+            //DefaultDigitalBlankstoNull(digital);
             DefaultPricingBlankstoNull(pricing);
 
             using (var client = new HttpClient())
@@ -143,11 +145,12 @@ namespace SalsifyApp.Controllers
                 Product.PMDGroup group = new Product.PMDGroup();
                 group.master = new List<Product.ProductMaster>();
                 group.master.Add(pmd[0]);
-                if (digital.Count != 0)
-                { 
-                    group.assets = new List<Product.SalsifyDigitalAsset>();
-                    group.assets.Add(digital[0]);
-                }
+                //******* REMOVED 3/30/2021 from spec, not needed at this time possible later phases *******
+                //if (digital.Count != 0)
+                //{ 
+                //    group.assets = new List<Product.SalsifyDigitalAsset>();
+                //    group.assets.Add(digital[0]);
+                //}
                 if (pricing.Count != 0)
                 {
                     group.price = new List<Product.SalsifyPricing>();
@@ -232,8 +235,9 @@ namespace SalsifyApp.Controllers
 
                 if (pmd.Count != 0) //Go to next SKU if not found in DB
                 {
+                    //******* REMOVED 3/30/2021 from spec, not needed at this time possible later phases *******
                     //get digital asset data from portal table and put in SalsifyDigitalAsset class
-                    List<Product.SalsifyDigitalAsset> digital = models.GetImageInfo(SKUName); //"1111"
+                    //List<Product.SalsifyDigitalAsset> digital = models.GetImageInfo(SKUName); //"1111"
 
                     //harcode for test
                     //pmd[0].Country_of_Origin = "United States";
@@ -295,7 +299,8 @@ namespace SalsifyApp.Controllers
 
                     //replace "" with null
                     DefaultBlankstoNull(pmd);
-                    DefaultDigitalBlankstoNull(digital);
+                    //******* REMOVED 3/30/2021 from spec, not needed at this time possible later phases *******
+                    //DefaultDigitalBlankstoNull(digital);
                     DefaultPricingBlankstoNull(pricing);
 
 
@@ -306,11 +311,12 @@ namespace SalsifyApp.Controllers
                         Product.PMDGroup group = new Product.PMDGroup();
                         group.master = new List<Product.ProductMaster>();
                         group.master.Add(pmd[0]);
-                        if (digital.Count != 0)
-                        {
-                            group.assets = new List<Product.SalsifyDigitalAsset>();
-                            group.assets.Add(digital[0]);
-                        }
+                        //******* REMOVED 3/30/2021 from spec, not needed at this time possible later phases *******
+                        //if (digital.Count != 0)
+                        //{
+                        //    group.assets = new List<Product.SalsifyDigitalAsset>();
+                        //    group.assets.Add(digital[0]);
+                        //}
                         if (pricing.Count != 0)
                         {
                             group.price = new List<Product.SalsifyPricing>();
@@ -396,8 +402,9 @@ namespace SalsifyApp.Controllers
                 return View();
             }
 
+            //******* REMOVED 3/30/2021 from spec, not needed at this time possible later phases *******
             //get digital asset data from portal table and put in SalsifyDigitalAsset class
-            List<Product.SalsifyDigitalAsset> digital = models.GetImageInfo(SKUName); //"1111"
+            //List<Product.SalsifyDigitalAsset> digital = models.GetImageInfo(SKUName); //"1111"
 
             //harcode for test
             //pmd[0].Country_of_Origin = "United States";
@@ -436,7 +443,8 @@ namespace SalsifyApp.Controllers
 
             //replace "" with null
             DefaultBlankstoNull(pmd);
-            DefaultDigitalBlankstoNull(digital);
+            //******* REMOVED 3/30/2021 from spec, not needed at this time possible later phases *******
+            //DefaultDigitalBlankstoNull(digital);
             DefaultPricingBlankstoNull(pricing);
 
             using (var client = new HttpClient())
@@ -446,11 +454,12 @@ namespace SalsifyApp.Controllers
                 Product.PMDGroup group = new Product.PMDGroup();
                 group.master = new List<Product.ProductMaster>();
                 group.master.Add(pmd[0]);
-                if (digital.Count != 0)
-                {
-                    group.assets = new List<Product.SalsifyDigitalAsset>();
-                    group.assets.Add(digital[0]);
-                }
+                //******* REMOVED 3/30/2021 from spec, not needed at this time possible later phases *******
+                //if (digital.Count != 0)
+                //{
+                //    group.assets = new List<Product.SalsifyDigitalAsset>();
+                //    group.assets.Add(digital[0]);
+                //}
                 if (pricing.Count != 0)
                 {
                     group.price = new List<Product.SalsifyPricing>();
@@ -517,9 +526,9 @@ namespace SalsifyApp.Controllers
 
                 if (pmd.Count != 0) //Go to next SKU if not found in DB
                 {
-
+                    //******* REMOVED 3/30/2021 from spec, not needed at this time possible later phases *******
                     //get digital asset data from portal table and put in SalsifyDigitalAsset class
-                    List<Product.SalsifyDigitalAsset> digital = models.GetImageInfo(SKUName); //"1111"
+                    //List<Product.SalsifyDigitalAsset> digital = models.GetImageInfo(SKUName); //"1111"
 
                     //harcode for test
                     //pmd[0].Country_of_Origin = "United States";
@@ -564,7 +573,8 @@ namespace SalsifyApp.Controllers
 
                     //replace "" with null
                     DefaultBlankstoNull(pmd);
-                    DefaultDigitalBlankstoNull(digital);
+                    //******* REMOVED 3/30/2021 from spec, not needed at this time possible later phases *******
+                    //DefaultDigitalBlankstoNull(digital);
                     DefaultPricingBlankstoNull(pricing);
 
 
@@ -575,11 +585,12 @@ namespace SalsifyApp.Controllers
                         Product.PMDGroup group = new Product.PMDGroup();
                         group.master = new List<Product.ProductMaster>();
                         group.master.Add(pmd[0]);
-                        if (digital.Count != 0)
-                        {
-                            group.assets = new List<Product.SalsifyDigitalAsset>();
-                            group.assets.Add(digital[0]);
-                        }
+                        //******* REMOVED 3/30/2021 from spec, not needed at this time possible later phases *******
+                        //if (digital.Count != 0)
+                        //{
+                        //    group.assets = new List<Product.SalsifyDigitalAsset>();
+                        //    group.assets.Add(digital[0]);
+                        //}
                         if (pricing.Count != 0)
                         {
                             group.price = new List<Product.SalsifyPricing>();

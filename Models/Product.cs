@@ -178,6 +178,14 @@ namespace SalsifyApp.Models
             public string Feature_Bullet_8 { get; set; }
             [JsonProperty("Feature Bullet 9")]
             public string Feature_Bullet_9 { get; set; }
+            [JsonProperty("Feature Bullet 13")]
+            public string Feature_Bullet_13 { get; set; }
+            [JsonProperty("Feature Bullet 14")]
+            public string Feature_Bullet_14 { get; set; }
+            [JsonProperty("Feature Bullet 15")]
+            public string Feature_Bullet_15 { get; set; }
+            [JsonProperty("Feature Bullet 16")]
+            public string Feature_Bullet_16 { get; set; }
             [JsonProperty("Finish")]
             public string Finish { get; set; }
             [JsonProperty("Flow Rate GPM")]
@@ -200,10 +208,10 @@ namespace SalsifyApp.Models
             public string Holder_Type { get; set; }
             [JsonProperty("Houzz Product ID")]
             public string Houzz_Product_ID { get; set; }
-            //[JsonProperty("Included Components")]
-            //public string Included_Components { get; set; }
-            //[JsonProperty("Installation / Mount Type")]
-            //public string Installation_Mount_Type { get; set; }
+            [JsonProperty("Included Components")]
+            public string Included_Components { get; set; }
+            [JsonProperty("Installation / Mount Type")]
+            public string Installation_Mount_Type { get; set; }
             [JsonProperty("Item Height (in)")]
             public Decimal? Item_Height_in { get; set; }
             [JsonProperty("Item Length (in)")]
@@ -272,6 +280,8 @@ namespace SalsifyApp.Models
             public Decimal? Pallet_Width_in { get; set; }
             [JsonProperty("Pressure Balance/Anti-Scald")]
             public string Pressure_Balance_Anti_Scald { get; set; }
+            [JsonProperty("Process of Getting CEC Listed")]
+            public String Process_Of_Getting_CEC_Listed { get; set; }
             [JsonProperty("Product Name")]
             public String Product_Name { get; set; }
             [JsonProperty("Pull Out Extension")]
@@ -364,8 +374,15 @@ namespace SalsifyApp.Models
             public string AssistProduct { get; set; }
             [JsonProperty("Special Attribute: Lead Free")]
             public string LeadFree { get; set; }
-            [JsonProperty("Product Category")]
+            [JsonProperty("Product Category (old)")]
             public string Product_Category { get; set; }
+            [JsonProperty("Secondary Collection")]
+            public string Secondary_Collection { get; set; }
+            [JsonProperty("Modified Shower Trim?")]
+            public string Modified_Shower_Trim { get; set; }
+            [JsonProperty("Contains Battery")]
+            public string Contains_Battery { get; set; }
+            
         }
 
         public class SalsifyDigitalAsset
@@ -425,7 +442,24 @@ namespace SalsifyApp.Models
             public string Logo_ID { get; set; }
             [JsonProperty("Prop 65 Warning")]
             public string Prop65Warning_ID { get; set; }
- 
+            [JsonProperty("Brochure")]
+            public string Brochure_ID { get; set; }
+            [JsonProperty("Non-Featured Product Image 1")]
+            public string Non_Featured_Product_Image_1_ID { get; set; }
+            [JsonProperty("Non-Featured Product Image 2")]
+            public string Non_Featured_Product_Image_2_ID { get; set; }
+            [JsonProperty("Non-Featured Product Image 3")]
+            public string Non_Featured_Product_Image_3_ID { get; set; }
+            [JsonProperty("Non-Featured Product Image 4")]
+            public string Non_Featured_Product_Image_4_ID { get; set; }
+            [JsonProperty("Non-Featured Product Image 5")]
+            public string Non_Featured_Product_Image_5_ID { get; set; }
+            [JsonProperty("Non-Featured Product Image 6")]
+            public string Non_Featured_Product_Image_6_ID { get; set; }
+            [JsonProperty("Non-Featured Product Image 7")]
+            public string Non_Featured_Product_Image_7_ID { get; set; }
+            [JsonProperty("Product Sheet")]
+            public string Product_Sheet_ID { get; set; }
         }
 
         public class PMDGroup

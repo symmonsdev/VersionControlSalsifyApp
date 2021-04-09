@@ -13,11 +13,13 @@ namespace SalsifyApp.Infrastructure
     public class Database
     {
 
-        private readonly SqlConnection _connection;
+        public readonly SqlConnection _connection;
 
         public Database()
         {
-            _connection = new SqlConnection("Server=SYM-CITY-TEST\\SYMMONSTEST;;Initial Catalog=SymPortal;Persist Security Info=True;User ID=admsymportal;Password=symportal05");
+
+            _connection = new SqlConnection("Server=SYM-CITY-DB;;Initial Catalog=SymPortal;Persist Security Info=True;User ID=admsymportal;Password=symportal05");
+           // _connection = new SqlConnection("Server=SYM-CITY-TEST\\SYMMONSTEST;;Initial Catalog=SymPortal;Persist Security Info=True;User ID=admsymportal;Password=symportal05");
 
             _connection.Open();
         }
@@ -50,14 +52,24 @@ namespace SalsifyApp.Infrastructure
             sqlCmd.Parameters.AddWithValue("@Task", task);
             sqlCmd.Parameters.AddWithValue("@SKU", SKU_Nbr);
 
-            return sqlCmd.ExecuteNonQuery();
+            int recordsAffected = sqlCmd.ExecuteNonQuery();
+            sqlCmd.Dispose();
+            _connection.Close();
+            return recordsAffected;
+
+            //return sqlCmd.ExecuteNonQuery();
         }
 
         public int ExecuteNonQuery(string query)
         {
             var sqlQuery = new SqlCommand(query, _connection);
 
-            return sqlQuery.ExecuteNonQuery();
+            int recordsAffected = sqlQuery.ExecuteNonQuery();
+            sqlQuery.Dispose();
+            _connection.Close();
+            return recordsAffected;
+
+            //return sqlQuery.ExecuteNonQuery();
         }
 
         public string[] Execute_GetSKUList_Reader(string query, string SKU_Nbr)
@@ -77,6 +89,7 @@ namespace SalsifyApp.Infrastructure
             }
 
             dr.Close();
+            _connection.Close();
 
             return skuResult.ToArray();
         }
@@ -105,6 +118,7 @@ namespace SalsifyApp.Infrastructure
             }
 
             dr.Close();
+            _connection.Close();
 
             return Result;
         }

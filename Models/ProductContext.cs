@@ -114,7 +114,7 @@ namespace SalsifyApp.Models
             pmdList = DataReaderMapToList<ProductMaster>(reader);
  
             reader.Close();
-
+            
 
             //Get the order products
             //var sql2 =
