@@ -378,7 +378,7 @@ namespace SalsifyApp.Controllers
 
             }
 
-            ViewData["Message"] = SKUs.Count + " SKUs have been process by Salsify, " + NbrCreated + " Created, " + NbrFailed + " Failed";
+            ViewData["Message"] = SKUs.Count + " SKUs have been processed by Salsify, " + NbrCreated + " Created, " + NbrFailed + " Failed";
             return View();
         }
 
@@ -635,7 +635,7 @@ namespace SalsifyApp.Controllers
                 }
             }
 
-            ViewData["Message"] = SKUs.Count + " SKUs have been process by Salsify, " + NbrCreated + " Updated, " + NbrFailed + " Failed";
+            ViewData["Message"] = SKUs.Count + " SKUs have been processed by Salsify, " + NbrCreated + " Updated, " + NbrFailed + " Failed";
             return View();
 
         }
