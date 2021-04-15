@@ -108,12 +108,16 @@ namespace SalsifyApp.Models
         {
             var database = new Database();
 
-            var reader = database.Execute_GetPMDInfo_Reader("GetPMDInfo_BySKU", SKU_Nbr); //replaced with server side stored procedure
-
             List<ProductMaster> pmdList = new List<ProductMaster>();
-            pmdList = DataReaderMapToList<ProductMaster>(reader);
+
+            pmdList = database.Execute_GetPMDInfo_Reader("GetPMDInfo_BySKU", SKU_Nbr); //replaced with server side stored procedure
+
+            //var reader = database.Execute_GetPMDInfo_Reader("GetPMDInfo_BySKU", SKU_Nbr); //replaced with server side stored procedure
+
+            //List<ProductMaster> pmdList = new List<ProductMaster>();
+            //pmdList = DataReaderMapToList<ProductMaster>(reader);
  
-            reader.Close();
+            //reader.Close();
             
 
             //Get the order products
@@ -164,53 +168,16 @@ namespace SalsifyApp.Models
 
             var database = new Database();
 
-            var reader = database.Execute_GetPMDInfo_Reader("GetImageInfo_BySKU", SKU_Nbr); //replaced with server side stored procedure
-
             List<SalsifyDigitalAsset> imageList = new List<SalsifyDigitalAsset>();
-            imageList = DataReaderMapToList<SalsifyDigitalAsset>(reader);
 
-            reader.Close();
+            imageList = database.Execute_GetPMD_DigitalInfo_Reader("GetImageInfo_BySKU", SKU_Nbr); //replaced with server side stored procedure
 
+            //var reader = database.Execute_GetPMDInfo_Reader("GetImageInfo_BySKU", SKU_Nbr); //replaced with server side stored procedure
 
-            //Get the order products
-            //var sql2 =
-            // "SELECT op.price, op.order_id, op.product_id, op.quantity, p.name, p.price FROM orderproduct op INNER JOIN product p on op.product_id=p.product_id";
+            //List<SalsifyDigitalAsset> imageList = new List<SalsifyDigitalAsset>();
+            //imageList = DataReaderMapToList<SalsifyDigitalAsset>(reader);
 
-            //var reader2 = database.ExecuteReader("sp_GetProducts"); //replaced with server side stored procedure
-
-            //var values2 = new List<OrderProduct>();
-
-            //while (reader2.Read())
-            //{
-            //    var record2 = (IDataRecord)reader2;
-
-            //    values2.Add(new OrderProduct()
-            //    {
-            //        OrderId = record2.GetInt32(1),
-            //        ProductId = record2.GetInt32(2),
-            //        Price = record2.GetDecimal(0),
-            //        Quantity = record2.GetInt32(3),
-            //        Product = new Product()
-            //        {
-            //            Name = record2.GetString(4),
-            //            Price = record2.GetDecimal(5)
-            //        }
-            //    });
-            //}
-
-            //reader2.Close();
-
-            //foreach (var order in values)
-            //{
-            //    foreach (var orderproduct in values2)
-            //    {
-            //        if (orderproduct.OrderId != order.OrderId)
-            //            continue;
-
-            //        order.OrderProducts.Add(orderproduct);
-            //        order.OrderTotal = order.OrderTotal + (orderproduct.Price * orderproduct.Quantity);
-            //    }
-            //}
+            //reader.Close();
 
             return imageList;
         }
@@ -220,53 +187,16 @@ namespace SalsifyApp.Models
 
             var database = new Database();
 
-            var reader = database.Execute_GetPricingInfo_Reader("GetSalsifyPricing_BySKU", SKU_Nbr); 
-
             List<SalsifyPricing> pricingList = new List<SalsifyPricing>();
-            pricingList = DataReaderMapToList<SalsifyPricing>(reader);
 
-            reader.Close();
+            pricingList = database.Execute_GetPricingInfo_Reader("GetSalsifyPricing_BySKU", SKU_Nbr);
 
+            //var reader = database.Execute_GetPricingInfo_Reader("GetSalsifyPricing_BySKU", SKU_Nbr); 
 
-            //Get the order products
-            //var sql2 =
-            // "SELECT op.price, op.order_id, op.product_id, op.quantity, p.name, p.price FROM orderproduct op INNER JOIN product p on op.product_id=p.product_id";
+            //List<SalsifyPricing> pricingList = new List<SalsifyPricing>();
+            //pricingList = DataReaderMapToList<SalsifyPricing>(reader);
 
-            //var reader2 = database.ExecuteReader("sp_GetProducts"); //replaced with server side stored procedure
-
-            //var values2 = new List<OrderProduct>();
-
-            //while (reader2.Read())
-            //{
-            //    var record2 = (IDataRecord)reader2;
-
-            //    values2.Add(new OrderProduct()
-            //    {
-            //        OrderId = record2.GetInt32(1),
-            //        ProductId = record2.GetInt32(2),
-            //        Price = record2.GetDecimal(0),
-            //        Quantity = record2.GetInt32(3),
-            //        Product = new Product()
-            //        {
-            //            Name = record2.GetString(4),
-            //            Price = record2.GetDecimal(5)
-            //        }
-            //    });
-            //}
-
-            //reader2.Close();
-
-            //foreach (var order in values)
-            //{
-            //    foreach (var orderproduct in values2)
-            //    {
-            //        if (orderproduct.OrderId != order.OrderId)
-            //            continue;
-
-            //        order.OrderProducts.Add(orderproduct);
-            //        order.OrderTotal = order.OrderTotal + (orderproduct.Price * orderproduct.Quantity);
-            //    }
-            //}
+            //reader.Close();
 
             return pricingList;
         }
