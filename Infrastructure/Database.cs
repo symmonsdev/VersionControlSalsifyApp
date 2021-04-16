@@ -20,7 +20,7 @@ namespace SalsifyApp.Infrastructure
         {
 
             _connection = new SqlConnection("Server=SYM-CITY-DB;;Initial Catalog=SymPortal;Persist Security Info=True;User ID=admsymportal;Password=symportal05");
-           // _connection = new SqlConnection("Server=SYM-CITY-TEST\\SYMMONSTEST;;Initial Catalog=SymPortal;Persist Security Info=True;User ID=admsymportal;Password=symportal05");
+            //_connection = new SqlConnection("Server=SYM-CITY-TEST\\SYMMONSTEST;;Initial Catalog=SymPortal;Persist Security Info=True;User ID=admsymportal;Password=symportal05");
 
             _connection.Open();
         }

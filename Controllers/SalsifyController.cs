@@ -472,7 +472,7 @@ namespace SalsifyApp.Controllers
 
                 var content = new StringContent(jsonRequest, Encoding.UTF8, "application/json");
 
-                client.BaseAddress = new Uri("https://app.salsify.com/api/v1/orgs/s-39696538-9fc5-489d-9d4f-c1d8c28229a7/products/" + SKUName + "?access_token=qbUQS7aKlr0pVruPmYB327gwkCI2xQonShsecISYRN8");
+                client.BaseAddress = new Uri("https://app.salsify.com/api/v1/orgs/s-39696538-9fc5-489d-9d4f-c1d8c28229a7/products/" + SKUName.Replace("/","%2F") + "?access_token=qbUQS7aKlr0pVruPmYB327gwkCI2xQonShsecISYRN8");
 
                 //HTTP POST
                 var postTask = client.PutAsync(client.BaseAddress.ToString(), content);
@@ -603,7 +603,7 @@ namespace SalsifyApp.Controllers
 
                         var content = new StringContent(jsonRequest, Encoding.UTF8, "application/json");
 
-                        client.BaseAddress = new Uri("https://app.salsify.com/api/v1/orgs/s-39696538-9fc5-489d-9d4f-c1d8c28229a7/products/" + SKUName + "?access_token=qbUQS7aKlr0pVruPmYB327gwkCI2xQonShsecISYRN8");
+                        client.BaseAddress = new Uri("https://app.salsify.com/api/v1/orgs/s-39696538-9fc5-489d-9d4f-c1d8c28229a7/products/" + SKUName.Replace("/", "%2F") + "?access_token=qbUQS7aKlr0pVruPmYB327gwkCI2xQonShsecISYRN8");
 
                         //HTTP POST
                         var postTask = client.PutAsync(client.BaseAddress.ToString(), content);
@@ -650,7 +650,7 @@ namespace SalsifyApp.Controllers
 
                 var models = new ProductContext();
 
-                client.BaseAddress = new Uri("https://app.salsify.com/api/v1/orgs/s-39696538-9fc5-489d-9d4f-c1d8c28229a7/products/" + SKUName + "?access_token=qbUQS7aKlr0pVruPmYB327gwkCI2xQonShsecISYRN8");
+                client.BaseAddress = new Uri("https://app.salsify.com/api/v1/orgs/s-39696538-9fc5-489d-9d4f-c1d8c28229a7/products/" + SKUName.Replace("/", "%2F") + "?access_token=qbUQS7aKlr0pVruPmYB327gwkCI2xQonShsecISYRN8");
 
                 //HTTP POST
                 var postTask = client.DeleteAsync(client.BaseAddress.ToString());
