@@ -95,11 +95,11 @@ namespace SalsifyApp.Models
             return skuList;
         }
 
-        public int InsertHistoryRecord(string result, string task, string SKU_Nbr)
+        public int InsertHistoryRecord(string result, string task, string SKU_Nbr, string statusCode, string errorDetails)
         {
             var database = new Database();
 
-            int recordAffected = database.Execute_InsertHistoryRecord(result, task, SKU_Nbr); 
+            int recordAffected = database.Execute_InsertHistoryRecord(result, task, SKU_Nbr, statusCode, errorDetails); 
 
             return recordAffected;
         }

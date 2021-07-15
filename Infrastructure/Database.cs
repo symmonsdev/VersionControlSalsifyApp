@@ -19,8 +19,8 @@ namespace SalsifyApp.Infrastructure
         public Database()
         {
 
-            _connection = new SqlConnection("Server=SYM-CITY-DB;;Initial Catalog=SymPortal;Persist Security Info=True;User ID=admsymportal;Password=symportal05");
-            //_connection = new SqlConnection("Server=SYM-CITY-TEST\\SYMMONSTEST;;Initial Catalog=SymPortal;Persist Security Info=True;User ID=admsymportal;Password=symportal05");
+            //_connection = new SqlConnection("Server=SYM-CITY-DB;;Initial Catalog=SymPortal;Persist Security Info=True;User ID=admsymportal;Password=symportal05");
+            _connection = new SqlConnection("Server=SYM-CITY-TEST\\SYMMONSTEST;;Initial Catalog=SymPortal;Persist Security Info=True;User ID=admsymportal;Password=symportal05");
 
             _connection.Open();
         }
@@ -69,13 +69,15 @@ namespace SalsifyApp.Infrastructure
 
             //return sqlCmd.ExecuteReader();
         }
-        public int Execute_InsertHistoryRecord(string result, string task, string SKU_Nbr)
+        public int Execute_InsertHistoryRecord(string result, string task, string SKU_Nbr, string statusCode, string errorDetails)
         {
             SqlCommand sqlCmd = new SqlCommand("InsertSalsifyHistory", _connection);
             sqlCmd.CommandType = CommandType.StoredProcedure;
             sqlCmd.Parameters.AddWithValue("@Result", result);
             sqlCmd.Parameters.AddWithValue("@Task", task);
             sqlCmd.Parameters.AddWithValue("@SKU", SKU_Nbr);
+            sqlCmd.Parameters.AddWithValue("@Code", statusCode);
+            sqlCmd.Parameters.AddWithValue("@Details", errorDetails);
 
             int recordsAffected = sqlCmd.ExecuteNonQuery();
             sqlCmd.Dispose();

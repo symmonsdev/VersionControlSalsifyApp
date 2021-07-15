@@ -374,7 +374,8 @@ namespace SalsifyApp.Models
             public string AssistProduct { get; set; }
             [JsonProperty("Special Attribute: Lead Free")]
             public string LeadFree { get; set; }
-            [JsonProperty("Product Category (old)")]
+            //[JsonProperty("Product Category (old)")] *** replaced with below pick list version
+            [JsonProperty("Product Category")] 
             public string Product_Category { get; set; }
             [JsonProperty("Secondary Collection")]
             public string Secondary_Collection { get; set; }
@@ -382,7 +383,11 @@ namespace SalsifyApp.Models
             public string Modified_Shower_Trim { get; set; }
             [JsonProperty("Contains Battery")]
             public string Contains_Battery { get; set; }
-            
+            [JsonProperty("L1-L7")]
+            public string L1L7_Variant { get; set; }
+            //[JsonProperty("Ready for Portal")]    *** not in salsify yet
+            //public string ReadyPortal { get; set; }
+
         }
 
         public class SalsifyDigitalAsset
