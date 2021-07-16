@@ -2779,7 +2779,7 @@ namespace SalsifyApp.Controllers
                     //harcode for test
                     //pmd[0].Country_of_Origin = "United test";
                     //pmd[0].GPC_Code = null;
-                    pmd[0].Finish = "test";
+                    //pmd[0].Finish = "test";
                     //**** REMOVE TEST ONLY
                     //pmd[0].Cal_Green_Compliant = "CALGreen";
                     //*** TEST ONLY REMOVE THIS when digital assets logic in place
