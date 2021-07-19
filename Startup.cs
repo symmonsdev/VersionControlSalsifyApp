@@ -25,7 +25,7 @@ namespace SalsifyApp
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-            services.Configure<Settings>(Configuration.GetSection("EmailSettings"));
+            services.Configure<Settings>(Configuration.GetSection("EmailSettings"));//add email section (creds & addresses)
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
